@@ -1,0 +1,36 @@
+name: bu_admin_panal
+version: 1.0.0+1
+publish_to: none
+description: A new Flutter project.
+environment:
+  sdk: ">=2.18.6 <3.0.0"
+
+dependencies:
+  cloud_firestore: null
+  cupertino_icons: ^1.0.2
+  dio: ^4.0.6
+  equatable: ^2.0.3
+  file_picker: ^5.2.5
+  firebase_auth: null
+  firebase_core: null
+  firebase_storage: ^11.0.11
+  flutter:
+    sdk: flutter
+  get: 4.6.5
+  google_fonts: ^3.0.1
+  image_picker: ^0.8.6+1
+  intl: ^0.17.0
+  laravel_exception: ^0.0.4
+  location: ^4.4.0
+  queen:
+    git:
+      url: https://github.com/maxzod/queen.git
+      ref: 344c478330602a2437b5b318fab4f6136d922a6e
+  uuid: ^3.0.7
+dev_dependencies:
+  flutter_lints: ^2.0.0
+  flutter_test:
+    sdk: flutter
+
+flutter:
+  uses-material-design: true
