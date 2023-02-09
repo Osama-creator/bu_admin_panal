@@ -51,13 +51,13 @@ class ProductDetailsController extends GetxController {
   void updateProduct() async {
     final catId = args[1] as String;
     final product = args[0] as Product;
+    var myRef = FirebaseFirestore.instance
+        .collection("categories")
+        .doc(catId)
+        .collection('products')
+        .doc(product.id);
     try {
-      await FirebaseFirestore.instance
-          .collection("categories")
-          .doc(catId)
-          .collection('products')
-          .doc(product.id)
-          .update({
+      await myRef.update({
         'name': nameController.text,
         'image': product.image,
         'price': double.parse(priceController.text),
@@ -75,13 +75,13 @@ class ProductDetailsController extends GetxController {
   void deleteProduct() async {
     final catId = args[1] as String;
     final product = args[0] as Product;
+    var myRef = FirebaseFirestore.instance
+        .collection("categories")
+        .doc(catId)
+        .collection('products')
+        .doc(product.id);
     try {
-      await FirebaseFirestore.instance
-          .collection("categories")
-          .doc(catId)
-          .collection('products')
-          .doc(product.id)
-          .delete();
+      await myRef.delete();
       Get.back();
       Get.snackbar('Success', 'Product deleted successfully');
     } catch (e) {
